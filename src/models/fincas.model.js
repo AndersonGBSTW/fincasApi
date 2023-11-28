@@ -14,7 +14,7 @@ const FincasSchema = new mongoose.Schema(
         required: [true, 'El Campo \'Nombre de la finca\' es Obligatorio']
     },
     direccion:{
-        type: Boolean,
+        type: String,
         required: [true, 'El Campo \'Direccion\' es Obligatorio']
     },
     valorAlquiler: {

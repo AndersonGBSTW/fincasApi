@@ -46,17 +46,18 @@ const fincasPut = async(req, res) => {
 
 // Funcion Delete
 const fincasDelete = async (req, res) => {
-    const {_id} = req.body
-    let messagge = 'Eliminacion Exitosa';
+    const {_id} = req.body;
     try{
-        const finca = await FincasModelo.deleteOne({_id: _id})
+        await FincasModelo.deleteOne({_id: _id});
+        res.json({
+            msg: 'Eliminacion Exitosa'
+        });
 
     }catch(error){
-        messagge = error;
+        res.json({
+            msg: error.message // Devuelve el mensaje de error al cliente
+        });
     }
-    res.json({
-        msg: messagge
-    })
 }
 
 // Exportacion
