@@ -25,6 +25,10 @@ const FincasSchema = new mongoose.Schema(
         type: String,
         required: [true, 'El Campo \'Cantidad de dias\' es Obligatorio']
     },
+    precioActualDolar: {
+        type: String,
+        required: [true, 'El Campo \'Precio Actual Dolar\' es Obligatorio']
+    },
     }
     ,{
         versionKey: false
