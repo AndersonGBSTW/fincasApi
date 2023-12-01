@@ -26,7 +26,7 @@ const fincasPost = async(req, res) => {
 // Funcion Put
 const fincasPut = async(req, res) => {
     let messagge = 'Modificacion Exitosa';
-    const {_id,numero,nombreFinca,direccion,valorAlquiler,cantidadDias} = req.body
+    const {_id,numero,nombreFinca,direccion,valorAlquiler,cantidadDias,precioActualDolar} = req.body
     try{
         await FincasModelo.updateMany(
             {_id:_id}, 
@@ -35,6 +35,7 @@ const fincasPut = async(req, res) => {
                 direccion: direccion,
                 valorAlquiler: valorAlquiler,
                 cantidadDias: cantidadDias,
+                precioActualDolar: precioActualDolar,
             }});
     }catch(error){
         messagge = error;
